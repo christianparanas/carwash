@@ -1,0 +1,87 @@
+<div class="">
+  <div class="bg-red-400 fixed w-full z-[100]">
+    <div class="w-[1200px] mx-auto py-4">
+      <div class="font-bold text-2xl text-slate-50">Carwash Reservation</div>
+      <div class=""></div>
+    </div>
+  </div>
+
+  <div class="py-[120px] w-[1200px] mx-auto">
+    <div class="">
+      <p
+        routerLink="/"
+        class="hover:text-red-500 transition-all cursor-pointer"
+      >
+        Return to Homepage
+      </p>
+      <h1 class="font-black text-3xl mt-2">Booking</h1>
+    </div>
+
+    <form class="bg-white p-4 w-[400px] rounded-lg shadow-sm mt-4" 
+      (ngSubmit)="onSubmit()"
+      [formGroup]="bookingForm"
+      autocomplete="off">
+      <p class="font-semibold">Plan</p>
+      <select
+        class="bg-slate-50 py-2 px-3 rounded-md text-sm w-full mb-2 outline-none"
+        required
+        formControlName="plan"
+      >
+        <option value="basic" [selected]="plan == 'basic'">Basic</option>
+        <option value="premium" [selected]="plan == 'premium'">Premium</option>
+        <option value="complex" [selected]="plan == 'complex'">Complex</option>
+      </select>
+
+      <p class="font-semibold">Full Name</p>
+      <input
+        type="text"
+        placeholder="Full name"
+        required
+        formControlName="name"
+        class="bg-slate-50 py-2 px-3 rounded-md text-sm w-full mb-2 outline-none"
+      />
+
+      <p class="font-semibold">Mobile Number</p>
+      <input
+        type="text"
+        placeholder="Mobile No."
+        required
+        formControlName="phone"
+        class="bg-slate-50 py-2 px-3 rounded-md text-sm w-full mb-2 outline-none"
+      />
+
+      <p class="font-semibold">Wash Date</p>
+      <input
+        type="date"
+        required
+        formControlName="date"
+        class="bg-slate-50 py-2 px-3 rounded-md text-sm w-full mb-2 outline-none"
+      />
+
+      <p class="font-semibold">Wash Time</p>
+      <input
+        type="time"
+        required
+        formControlName="time"
+        class="bg-slate-50 py-2 px-3 rounded-md text-sm w-full mb-2 outline-none"
+      />
+
+      <p class="font-semibold">Message</p>
+      <textarea
+      formControlName="message"
+        class="resize-none"
+        cols="30"
+        rows="5"
+        placeholder="Message if any"
+        class="bg-slate-50 py-2 px-3 rounded-md text-sm w-full mb-2 outline-none"
+      ></textarea>
+
+      <button
+        type="submit"
+        class="bg-red-500 text-white font-bold w-full text-center py-3 rounded-lg shadow-md hover:bg-red-500/80 transition-all"
+      >
+        Book Now
+      </button>
+    </form>
+  </div>
+</div>
